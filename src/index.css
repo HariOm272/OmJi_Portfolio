@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* ===== Theme Variables ===== */
+:root {
+  --bg: #0f172a; /* dark blue */
+  --card: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.15);
+  --text: #e5e7eb;
+  --accent: #a855f7;
+}
+
+/* ===== Base Styling ===== */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: var(--text);
+}
+
+/* Center container */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Smooth Animations ===== */
+@layer utilities {
+  .animate-slowSpin {
+    animation: spin 6s linear infinite;
+  }
+}
+
+/* Optional glow effect */
+.glow {
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+}
+
+@layer utilities {
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeUp {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+}
